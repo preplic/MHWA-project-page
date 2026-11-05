@@ -1,13 +1,13 @@
 {
   "video": "assets/videos/hero-showcase.mp4",
   "poster": "assets/hero-poster.jpg",
-  "recordings": 13,
+  "recordings": 14,
   "expected": 14,
   "layout": "2x2",
   "duration": 34.4,
   "introDuration": 3.6,
   "sceneDuration": 8,
-  "version": "be71d877932a",
+  "version": "088a78e40420",
   "scenes": [
     [
       "Assault",
@@ -28,10 +28,10 @@
       "TimePilot"
     ],
     [
+      "ChopperCommand",
       "Zaxxon",
       "Assault",
-      "Phoenix",
-      "Centipede"
+      "Phoenix"
     ]
   ]
 }
