@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="MHWA couples a strided high-level context channel with a context-aware mixture of experts for multi-game offline reinforcement learning.">
+  <meta property="og:title" content="MHWA · Multi-timescale Hierarchical World-Action Model">
+  <meta property="og:description" content="Structure over scale: hierarchical context and sparse expert routing for offline Atari world-action modeling.">
+  <meta property="og:image" content="assets/social.png">
+  <title>MHWA · Multi-timescale Hierarchical World-Action Model</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site-config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#overview">Skip to content</a>
+  <header class="nav-shell">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="MHWA home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>MHWA<span class="brand-note">WORLD + ACTION</span></a>
+      <div class="nav-links"><a href="#method">Method</a><a href="#results">Results</a></div>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero wrap" id="overview" aria-labelledby="title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> MULTI-GAME OFFLINE REINFORCEMENT LEARNING</p>
+        <h1 id="title"><span class="title-acronym">MHWA<span class="title-dot">.</span></span><br>Multi-timescale<br>Hierarchical<br><em>World-Action Model</em></h1>
+        <p class="hero-lead">Learn the world.<br>Act with <span>structure.</span></p>
+        <p class="hero-description">A strided high-level context channel meets a locally reactive mixture of experts. One world-action model, fourteen Atari games, and less training computation.</p>
+        <div class="resource-links"><a id="arxiv-link" class="button primary" href="https://arxiv.org/abs/2610.14727" target="_blank" rel="noopener">arXiv ↗</a><span id="code-link" class="button disabled" aria-disabled="true">Code · coming soon</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="demo-topline"><span>01 / THE MODEL IN ACTION</span><span class="live-label"><i></i> AGENT GAMEPLAY</span></div>
+        <div class="hero-screen" id="hero-screen">
+          <video id="hero-video" controls muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-label="MHWA introduction and rotating four-game gameplay showcase">
+            <source src="assets/videos/hero-showcase.mp4" type="video/mp4">
+            <a href="assets/videos/hero-showcase.mp4">Open the gameplay preview</a>.
+          </video>
+          <div class="screen-corner top-left" aria-hidden="true"></div><div class="screen-corner bottom-right" aria-hidden="true"></div>
+        </div>
+        <div class="demo-caption"><strong id="hero-game">One model / multiple worlds</strong><span id="hero-caption">Four games at a time · real RGB recordings</span></div>
+        <div class="hero-preview-links"><span id="hero-coverage">Rotating four-game scenes</span><button id="hero-playback" class="hero-playback" type="button" hidden aria-label="Play gameplay preview">Play preview</button><a href="assets/videos/hero-showcase.mp4" id="hero-download">Open video ↗</a></div>
+        <p class="demo-note" id="hero-status" role="status">Brand introduction followed by excerpts from recorded agent rollouts.</p>
+      </div>
+    </section>
+    <section class="author-section wrap" aria-label="Authors and affiliations">
+      <p class="authors"><span>Pengcheng Pan<sup>1,2,4,*</sup></span><span>Guoqing Ma<sup>1,3,4,*</sup></span><span>Yuhan Zhang<sup>1,2,4</sup></span><span>Yang Chen<sup>1,4</sup></span><span>Yichen Liu<sup>1,3,4</sup></span><span>Ziheng Li<sup>1,2,4</sup></span><span>Shan Yu<sup>1,4,†</sup></span></p>
+      <div class="affiliations"><p><sup>1</sup> Laboratory of Brain Atlas and Brain-inspired Intelligence, Institute of Automation, Chinese Academy of Sciences</p><p><sup>2</sup> School of Artificial Intelligence, University of Chinese Academy of Sciences</p><p><sup>3</sup> School of Future Technology, University of Chinese Academy of Sciences</p><p><sup>4</sup> State Key Laboratory of Brain Cognition and Brain-inspired Intelligence Technology, Institute of Automation, Chinese Academy of Sciences</p></div>
+      <p class="author-note">Beijing, China · * Equal contribution · † Corresponding author: <a href="mailto:shan.yu@nlpr.ia.ac.cn">Shan Yu</a></p>
+    </section>
+    <section class="metrics wrap" aria-label="Key paper results">
+      <div><span class="metric-label">AGGREGATE PERFORMANCE</span><strong>0.884<span>IQM HNS</span></strong><p>RLiable seed-by-game aggregation<br>Three training seeds · 14 games</p></div>
+      <div><span class="metric-label">MODEL SIZE</span><strong>77<span>million parameters</span></strong><p>Numerically comparable to the<br>published JOWA-150M result</p></div>
+      <div><span class="metric-label">TRAINING COMPUTATION</span><strong>70.88<span>% fewer FLOPs</span></strong><p>Forward + backward per sequence<br>Compared with JOWA-150M</p></div>
+    </section>
+    <section class="story wrap section-space" aria-labelledby="question-title">
+      <div><p class="eyebrow">THE QUESTION</p><h2 id="question-title">Can better structure<br>reduce the need<br>for greater scale?</h2></div>
+      <div class="story-text"><p class="large-copy">Small prediction errors become bigger decisions.</p><p>Autoregressive world models can drift as they roll out their own predictions. Scaling model capacity helps, but increases training cost. MHWA explores a complementary direction: organize context and computation across timescales.</p><p>The high-level pathway learns from strided trajectories with a skip-step predictive objective. The low-level pathway combines this context with the instantaneous token state to select specialized experts across heterogeneous game dynamics.</p><a class="text-link" href="https://arxiv.org/abs/2610.14727" target="_blank" rel="noopener">Explore the full formulation <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <section class="method section-space" id="method" aria-labelledby="method-title">
+      <div class="wrap"><div class="section-heading"><div><p class="eyebrow">02 / ARCHITECTURE</p><h2 id="method-title">Two levels.<br>One world-action model.</h2></div><p>A high-level context channel guides sparse computation at the token level.</p></div>
+        <figure class="architecture-figure"><a href="assets/architecture.png" target="_blank" rel="noopener"><img src="assets/architecture.png" loading="lazy" width="1670" height="1112" alt="MHWA architecture: a strided high-level Manager, an isolated context projector, and a low-level Worker with context-aware expert routing."></a><figcaption>MHWA architecture. Figure from the paper; open for a closer look.</figcaption></figure>
+        <div class="method-steps"><article><span>01</span><h3>Learn coarse context</h3><p>A strided Manager learns predictive representations using a skip-step observation objective.</p></article><article><span>02</span><h3>Separate learning signals</h3><p>Stop-gradient isolates the Manager from low-level losses, while the projector, router, and Worker remain trainable.</p></article><article><span>03</span><h3>Route local computation</h3><p>The gate combines context and current token state, activating two of four experts in each Worker MoE layer.</p></article></div>
+      </div>
+    </section>
+    <section class="results wrap section-space" id="results" aria-labelledby="results-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / PAPER RESULTS</p><h2 id="results-title">Strong performance.<br>Smaller training footprint.</h2></div><p>14 Atari games · 10% subsampled offline data<br>Matched MHWA / JOWA-70M comparison across three seeds.</p></div>
+      <div class="results-grid"><div class="chart-panel"><div class="chart-heading"><h3>Aggregate Atari performance</h3><span>IQM HNS ↑</span></div><svg class="results-chart" viewBox="0 0 600 290" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">MHWA and JOWA aggregate performance</title><desc id="chart-desc">Matched JOWA-70M has IQM 0.529, confidence interval 0.459 to 0.602. MHWA-77M has IQM 0.884, confidence interval 0.736 to 1.031. The published JOWA-150M reference is 0.833.</desc><g class="chart-grid"><path d="M160 45V240 M274 45V240 M388 45V240 M502 45V240"/><text x="160" y="267">0.0</text><text x="274" y="267">0.3</text><text x="388" y="267">0.6</text><text x="502" y="267">0.9</text></g><text class="chart-label" x="0" y="84">JOWA-70M</text><text class="chart-label ours" x="0" y="151">MHWA-77M</text><text class="chart-label" x="0" y="218">JOWA-150M*</text><rect x="160" y="62" width="201" height="30" rx="3" fill="#a2b5ba"/><rect x="160" y="129" width="336" height="30" rx="3" fill="#e76036"/><rect x="160" y="196" width="317" height="30" rx="3" fill="#d8d4cb"/><g stroke="#172b32" stroke-width="2"><path d="M334 77H389 M334 70V84 M389 70V84"/><path d="M440 144H552 M440 137V151 M552 137V151"/></g><text class="chart-value" x="402" y="84">0.529</text><text class="chart-value ours" x="507" y="119">0.884</text><text class="chart-value" x="489" y="218">0.833*</text></svg><p class="chart-footnote">Whiskers: 95% stratified-bootstrap confidence intervals. * Published reference; separate from the matched three-seed comparison.</p></div>
+      <div class="compute-panel"><p class="eyebrow">FORWARD + BACKWARD / SEQUENCE</p><div class="compute-row"><span>JOWA-150M</span><strong>165.524 <small>GFLOPs</small></strong></div><div class="compute-track"><span style="width:100%"></span></div><div class="compute-row"><span>JOWA-70M</span><strong>84.238 <small>GFLOPs</small></strong></div><div class="compute-track"><span style="width:50.89%"></span></div><div class="compute-row highlight"><span>MHWA-77M</span><strong>48.199 <small>GFLOPs</small></strong></div><div class="compute-track highlight"><span style="width:29.12%"></span></div><div class="compute-saving"><strong>70.88%</strong><span>less training computation<br>than JOWA-150M</span></div><p>Identical input shapes: 8 frames / 296 tokens per sequence. These figures measure training computation, not inference speed.</p></div></div>
+      <div class="table-scroll"><table><caption>Matched performance and training computation, from the paper.</caption><thead><tr><th scope="col">Model</th><th scope="col">IQM HNS</th><th scope="col">95% confidence interval</th><th scope="col">GFLOPs / sequence</th></tr></thead><tbody><tr><th scope="row">JOWA-70M</th><td>0.529</td><td>[0.459, 0.602]</td><td>84.238</td></tr><tr class="our-row"><th scope="row">MHWA-77M</th><td>0.884</td><td>[0.736, 1.031]</td><td>48.199</td></tr><tr><th scope="row">JOWA-150M · published reference</th><td>0.833</td><td>—</td><td>165.524</td></tr></tbody></table></div>
+      <p class="results-note">IQM uses RLiable’s seed-by-game aggregation. The paper also reports a mean of seed-level IQMs of 0.867 ± 0.047; these are different aggregation procedures.</p>
+      <div class="transfer-note"><span>BEYOND THE TRAINING GAMES</span><p>On five held-out Atari games, MHWA reaches <strong>0.643 ± 0.007 IQM DNS</strong> under the JOWA fine-tuning protocol, compared with the published JOWA-150M result of 0.647.</p></div>
+    </section>
+    <section class="drift section-space" aria-labelledby="drift-title"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">04 / WORLD-MODEL QUALITY</p><h2 id="drift-title">Look beyond<br>the next prediction.</h2></div><p>Open-loop reconstruction measures how predictions evolve after conditioning on four real frames.</p></div><figure><img src="assets/open-loop.png" loading="lazy" width="2146" height="657" alt="Paper figure comparing open-loop reconstruction MSE, PSNR, and SSIM across rollout steps five to eight for MHWA and JOWA baselines."><figcaption>Open-loop reconstruction within the context window, from the paper. MHWA shows more stable reconstruction than the smaller monolithic baseline.</figcaption></figure></div></section>
+    <section class="citation wrap section-space" aria-labelledby="citation-title"><div><p class="eyebrow">CITE THIS WORK</p><h2 id="citation-title">Build on MHWA.</h2><p>The paper is available now. The public code release is in preparation.</p><a class="text-link" id="contact-link" href="mailto:panpengcheng19@mails.ucas.ac.cn">Get in touch ↗</a></div><div class="citation-box"><button id="copy-citation" type="button">Copy BibTeX</button><pre id="bibtex">@misc{pan2026mhwa,
+  title = {MHWA: Multi-timescale Hierarchical World-Action Model},
+  author = {Pan, Pengcheng and Ma, Guoqing and Zhang, Yuhan
+            and Chen, Yang and Liu, Yichen and Li, Ziheng and Yu, Shan},
+  year = {2026},
+  eprint = {2610.14727},
+  archivePrefix = {arXiv}
+}</pre><span id="copy-status" role="status"></span></div></section>
+  </main>
+  <footer class="wrap"><a class="brand" href="#top">MHWA<span class="title-dot">.</span></a><p>Multi-timescale Hierarchical World-Action Model · 2026</p><a href="https://github.com/CJReinforce/JOWA" target="_blank" rel="noopener">Built on JOWA ↗</a></footer>
+</body>
+</html>

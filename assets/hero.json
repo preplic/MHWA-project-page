@@ -1,0 +1,37 @@
+{
+  "video": "assets/videos/hero-showcase.mp4",
+  "poster": "assets/hero-poster.jpg",
+  "recordings": 13,
+  "expected": 14,
+  "layout": "2x2",
+  "duration": 34.4,
+  "introDuration": 3.6,
+  "sceneDuration": 8,
+  "version": "be71d877932a",
+  "scenes": [
+    [
+      "Assault",
+      "Phoenix",
+      "Centipede",
+      "BeamRider"
+    ],
+    [
+      "Atlantis",
+      "Carnival",
+      "DemonAttack",
+      "NameThisGame"
+    ],
+    [
+      "Seaquest",
+      "SpaceInvaders",
+      "StarGunner",
+      "TimePilot"
+    ],
+    [
+      "Zaxxon",
+      "Assault",
+      "Phoenix",
+      "Centipede"
+    ]
+  ]
+}
