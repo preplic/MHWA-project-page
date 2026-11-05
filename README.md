@@ -56,19 +56,7 @@ fine-tuning protocol, compared with the published JOWA-150M result of 0.647.
 
 [**Watch the multi-game video preview**](assets/videos/hero-showcase.mp4)
 
-The homepage opens with an MHWA title sequence, followed by a looping four-screen
-montage that cycles through the available gameplay recordings.
-
 [![MHWA gameplay preview](assets/hero-poster.jpg)](assets/videos/hero-showcase.mp4)
-
-The project page presents full-color recordings from the 14-game Atari
-suite. Each game uses one rollout with its selected buffer and planning
-configuration. These recordings illustrate behavior; they are separate from
-the paper's multi-seed benchmark statistics.
-
-The collection covers Assault, Atlantis, Beam Rider, Carnival, Centipede,
-Chopper Command, Demon Attack, Name This Game, Phoenix, Seaquest, Space Invaders,
-Star Gunner, Time Pilot, and Zaxxon.
 
 ## Authors and affiliations
 
