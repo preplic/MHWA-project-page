@@ -19,14 +19,15 @@ This is the research preview. The public code release is in preparation.
 
 ## A hierarchy that learns context and routes computation
 
-![The MHWA architecture](assets/architecture.png)
+![The MHWA architecture](assets/architecture.png?v=a55bcec7a29c)
 
-- **Predictive context:** a high-level Manager learns from strided trajectories
-  using a skip-step observation prediction objective.
+- **Predictive context:** the high-level Manager processes input embeddings sampled
+  every four tokens and predicts the next sampled observation or action token.
 - **Separate learning signals:** stop-gradient isolates the Manager from
   low-level objectives; the Context Projector, router, and Worker remain trainable.
-- **Context-aware experts:** the Worker combines context with the current token
-  state, activating two of four experts per MoE layer.
+- **Context-aware experts:** the Worker's gating network combines high-level context
+  with the current token representation to select and weight two of four experts
+  per MoE layer.
 
 ## Paper results
 
