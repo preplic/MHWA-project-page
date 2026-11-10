@@ -15,7 +15,7 @@ of experts for multi-game offline reinforcement learning. It explores whether
 architectural structure can improve world-action modeling without relying only
 on greater model scale.
 
-This is the research preview. The public code release is in preparation.
+The public code release is in preparation.
 
 ## A hierarchy that learns context and routes computation
 
@@ -97,7 +97,3 @@ Contact: [Pengcheng Pan](mailto:panpengcheng19@mails.ucas.ac.cn) ·
 ## Acknowledgment
 
 Our implementation builds on [JOWA](https://github.com/CJReinforce/JOWA).
-
----
-
-To preview or publish the project page, see [deployment instructions](DEPLOY.md).
